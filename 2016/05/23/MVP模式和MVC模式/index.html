@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="android," />
+  <meta name="keywords" content="设计模式," />
 
 
 
@@ -84,16 +84,26 @@
 
 
 
-<meta name="description" content="xxxxx">
+<meta name="description" content="###MVC和MVP的区别？
+   MVP区别于MVC是：“视图并不使用模型”。在MVP模式中视图和模型是完全分离的，他们通过Presenter进行交互。
+　　MVP 是从经典的模式MVC演变而来，它们的基本思想有相通的地方：Controller/Presenter负责逻辑的处理，Model提供数据，View负责显示。作为一种新的模式，MVP与MVC有着一个重大的区别：在MVP中View并不直接使">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android开发如何技术选型？">
-<meta property="og:url" content="http://yoursite.com/2016/05/20/Android开发如何技术选型？/index.html">
+<meta property="og:title" content="MVP模式和MVC模式">
+<meta property="og:url" content="http://yoursite.com/2016/05/23/MVP模式和MVC模式/index.html">
 <meta property="og:site_name" content="iKnow的技术博客">
-<meta property="og:description" content="xxxxx">
-<meta property="og:updated_time" content="2016-05-20T11:04:12.000Z">
+<meta property="og:description" content="###MVC和MVP的区别？
+   MVP区别于MVC是：“视图并不使用模型”。在MVP模式中视图和模型是完全分离的，他们通过Presenter进行交互。
+　　MVP 是从经典的模式MVC演变而来，它们的基本思想有相通的地方：Controller/Presenter负责逻辑的处理，Model提供数据，View负责显示。作为一种新的模式，MVP与MVC有着一个重大的区别：在MVP中View并不直接使">
+<meta property="og:image" content="http://yoursite.com/mvp1.png">
+<meta property="og:image" content="http://yoursite.com/mvp2.png">
+<meta property="og:image" content="http://yoursite.com/mvp3.png">
+<meta property="og:updated_time" content="2016-05-23T09:59:38.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android开发如何技术选型？">
-<meta name="twitter:description" content="xxxxx">
+<meta name="twitter:title" content="MVP模式和MVC模式">
+<meta name="twitter:description" content="###MVC和MVP的区别？
+   MVP区别于MVC是：“视图并不使用模型”。在MVP模式中视图和模型是完全分离的，他们通过Presenter进行交互。
+　　MVP 是从经典的模式MVC演变而来，它们的基本思想有相通的地方：Controller/Presenter负责逻辑的处理，Model提供数据，View负责显示。作为一种新的模式，MVP与MVC有着一个重大的区别：在MVP中View并不直接使">
+<meta name="twitter:image" content="http://yoursite.com/mvp1.png">
 
 
 
@@ -111,7 +121,7 @@
   };
 </script>
 
-  <title> Android开发如何技术选型？ | iKnow的技术博客 </title>
+  <title> MVP模式和MVC模式 | iKnow的技术博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -251,7 +261,7 @@
             
             
               
-                Android开发如何技术选型？
+                MVP模式和MVC模式
               
             
           </h1>
@@ -263,8 +273,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-20T18:55:54+08:00" content="2016-05-20">
-              2016-05-20
+            <time itemprop="dateCreated" datetime="2016-05-23T17:01:50+08:00" content="2016-05-23">
+              2016-05-23
             </time>
           </span>
 
@@ -310,7 +320,17 @@
       
 
       
-        
+        <p>###MVC和MVP的区别？</p>
+<p>   MVP区别于MVC是：“视图并不使用模型”。在MVP模式中视图和模型是完全分离的，他们通过Presenter进行交互。</p>
+<p>　　MVP 是从经典的模式MVC演变而来，它们的基本思想有相通的地方：Controller/Presenter负责逻辑的处理，Model提供数据，View负责显示。作为一种新的模式，MVP与MVC有着一个重大的区别：在MVP中View并不直接使用Model，它们之间的通信是通过Presenter (MVC中的Controller)来进行的，所有的交互都发生在Presenter内部，而在MVC中View会直接从Model中读取数据而不是通过 Controller。</p>
+<p>　　在MVC里，View是可以直接访问Model的！从而，View里会包含Model信息，不可避免的还要包括一些业务逻辑。 在MVC模型里，更关注的Model的不变，而同时有多个对Model的不同显示，及View。所以，在MVC模型里，Model不依赖于View，但是View是依赖于Model的。不仅如此，因为有一些业务逻辑在View里实现了，导致要更改View也是比较困难的，至少那些业务逻辑是无法重用的。</p>
+<p>###MVP如何解决MVC的问题？</p>
+<p>　　在MVP里，Presenter完全把Model和View进行了分离，主要的程序逻辑在Presenter里实现。而且，Presenter与具体的View是没有直接关联的，而是通过定义好的接口进行交互，从而使得在变更View时候可以保持Presenter的不变，即重用！ 不仅如此，我们还可以编写测试用的View，模拟用户的各种操作，从而实现对Presenter的测试 —— 而不需要使用自动化的测试工具。 我们甚至可以在Model和View都没有完成时候，就可以通过编写Mock Object（即实现了Model和View的接口，但没有具体的内容的）来测试Presenter的逻辑。 在MVP里，应用程序的逻辑主要在Presenter来实现，其中的View是很薄的一层。因此就有人提出了Presenter First的设计模式，就是根据User Story来首先设计和开发Presenter。在这个过程中，View是很简单的，能够把信息显示清楚就可以了。在后面，根据需要再随便更改View，而对Presenter没有任何的影响了。 如果要实现的UI比较复杂，而且相关的显示逻辑还跟Model有关系，就可以在View和Presenter之间放置一个Adapter。由这个 Adapter来访问Model和View，避免两者之间的关联。而同时，因为Adapter实现了View的接口，从而可以保证与Presenter之间接口的不变。这样就可以保证View和Presenter之间接口的简洁，又不失去UI的灵活性。 在MVP模式里，View只应该有简单的Set/Get的方法，用户输入和设置界面显示的内容，除此就不应该有更多的内容，绝不容许直接访问Model —— 这就是与MVC很大的不同之处。</p>
+<p>###MVP的优点</p>
+<p>1.模型与视图完全分离，我们可以修改视图而不影响模型。<br>2.可以更高效地使用模型，因为所有的交互都发生在一个地方 —— Presenter内部。<br>3.我们可以将一个Presener用于多个视图，而不需要改变Presenter的逻辑。这个特性非常的有用，因为视图的变化总是比模型的变化频繁。<br>4.如果我们把逻辑放在Presenter中，那么我们就可以脱离用户接口来测试这些逻辑（单元测试）。</p>
+<p>###MVP的缺点</p>
+<p>　　由于对视图的渲染放在了Presenter中，所以视图和Persenter的交互会过频繁。还有一点需要明白，如果Presenter过多地渲染了视图，往往会使得它与特定的视图的联系过于紧密。一旦视图需要变更，那么Presenter也需要变更了。比如说，原本用来呈现Html的Presenter现在也需要用于呈现PDF了，那么视图很有可能也需要变更。<br>　　　<br><img src="mvp1.png" alt="mvp1"><br><img src="mvp2.png" alt="mvp2"><br><img src="mvp3.png" alt="mvp3"></p>
+
       
     </div>
 
@@ -331,7 +351,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/android/" rel="tag">#android</a>
+            <a href="/tags/设计模式/" rel="tag">#设计模式</a>
           
         </div>
       
@@ -340,17 +360,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/19/Android-in-action/" rel="next" title="Android in action">
-                <i class="fa fa-chevron-left"></i> Android in action
+              <a href="/2016/05/20/Android开发如何技术选型？/" rel="next" title="Android开发如何技术选型？">
+                <i class="fa fa-chevron-left"></i> Android开发如何技术选型？
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/05/23/MVP模式和MVC模式/" rel="prev" title="MVP模式和MVC模式">
-                MVP模式和MVC模式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
