@@ -325,7 +325,7 @@
 <p>###MVP的优点</p>
 <p>1.模型与视图完全分离，我们可以修改视图而不影响模型。<br>2.可以更高效地使用模型，因为所有的交互都发生在一个地方 —— Presenter内部。<br>3.我们可以将一个Presener用于多个视图，而不需要改变Presenter的逻辑。这个特性非常的有用，因为视图的变化总是比模型的变化频繁。<br>4.如果我们把逻辑放在Presenter中，那么我们就可以脱离用户接口来测试这些逻辑（单元测试）。</p>
 <p>###MVP的缺点</p>
-<p>　　由于对视图的渲染放在了Presenter中，所以视图和Persenter的交互会过频繁。还有一点需要明白，如果Presenter过多地渲染了视图，往往会使得它与特定的视图的联系过于紧密。一旦视图需要变更，那么Presenter也需要变更了。比如说，原本用来呈现Html的Presenter现在也需要用于呈现PDF了，那么视图很有可能也需要变更。<br>　　　<br><img src="https://github.com/who-know-me/iknow.Images/blob/master/mvp/mvp1.png" alt="mvp"><br><img src="https://github.com/who-know-me/iknow.Images/blob/master/mvp/mvp2.png" alt="mvp2"><br><img src="https://github.com/who-know-me/iknow.Images/blob/master/mvp/mvp3.png" alt="mvp3"></p>
+<p>　　由于对视图的渲染放在了Presenter中，所以视图和Persenter的交互会过频繁。还有一点需要明白，如果Presenter过多地渲染了视图，往往会使得它与特定的视图的联系过于紧密。一旦视图需要变更，那么Presenter也需要变更了。比如说，原本用来呈现Html的Presenter现在也需要用于呈现PDF了，那么视图很有可能也需要变更。<br>　　　<br><img src="https://raw.githubusercontent.com/who-know-me/iknow.Images/master/mvp/mvp1.png" alt="mvp"><br><img src="https://github.com/who-know-me/iknow.Images/blob/master/mvp/mvp2.png" alt="mvp2"><br><img src="https://github.com/who-know-me/iknow.Images/blob/master/mvp/mvp3.png" alt="mvp3"></p>
 
           
         
