@@ -267,7 +267,7 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-24T10:17:08+08:00" content="2016-05-24">
+            <time itemprop="dateCreated" datetime="2016-05-24T10:18:54+08:00" content="2016-05-24">
               2016-05-24
             </time>
           </span>
@@ -298,15 +298,8 @@
         
           
             <p>—ls<br>title: Java如何使用Builder模式创建对象<br>date: 2016-05-24 10:03:18<br>tags: Java</p>
-<h2 id="categories-programming"><a href="#categories-programming" class="headerlink" title="categories: programming"></a>categories: programming</h2><p>我们知道在某些类中会包含很多的变量，而这些变量需要在构造函数中传入，但是有些参数在某种情况下又不需要传入，<br>那么在写构造函数的时候就需要写很多个构造函数，这样没有达到按需给取的目的，而且代码也不简洁。<br>在这里我们可以参考一下Retorfit中RestAdapter 类的写法，该类是采用Builder模式来创建的。<br>首先看一下源码的定义方式</p>
-<p>public class RestAdapter {<br>  private RestAdapter(){}</p>
-<p>public static class Builder {</p>
-<pre><code>public Builder setEndpoint(String endpoint) {
-</code></pre><p>  return this;<br>}</p>
-<p>public Builder setProfiler(Profiler profiler) {<br>  return this;<br>}</p>
-<p>public RestAdapter build() {<br>  return new RestAdapter();<br>}<br>   }</p>
-<p>}</p>
-<p>最后是这么使用的：<br>RestAdapter.Builder builder = new RestAdapter.Builder();<br>builder.setEndpoint(baseUrl)；<br>RestAdapter restAdapter = builder.build();</p>
+<h2 id="categories-programming"><a href="#categories-programming" class="headerlink" title="categories: programming"></a>categories: programming</h2><p>我们知道在某些类中会包含很多的变量，而这些变量需要在构造函数中传入，但是有些参数在某种情况下又不需要传入，<br>那么在写构造函数的时候就需要写很多个构造函数，这样没有达到按需给取的目的，而且代码也不简洁。<br>在这里我们可以参考一下Retorfit中RestAdapter 类的写法，该类是采用Builder模式来创建的。<br>首先看一下源码的定义方式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">public class RestAdapter &#123;</span><br><span class="line">  private RestAdapter()&#123;&#125;</span><br><span class="line"></span><br><span class="line">public static class Builder &#123;</span><br><span class="line"></span><br><span class="line">     public Builder setEndpoint(String endpoint) &#123;</span><br><span class="line">  return this;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public Builder setProfiler(Profiler profiler) &#123;</span><br><span class="line">  return this;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public RestAdapter build() &#123;</span><br><span class="line">  return new RestAdapter();</span><br><span class="line">&#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>最后是这么使用的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">RestAdapter.Builder builder = new RestAdapter.Builder();</span><br><span class="line">builder.setEndpoint(baseUrl)；</span><br><span class="line">RestAdapter restAdapter = builder.build();</span><br></pre></td></tr></table></figure></p>
 
           
         
