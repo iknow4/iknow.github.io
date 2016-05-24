@@ -253,6 +253,109 @@
             
               
                 
+                <a class="post-title-link" href="/2016/05/24/Java如何使用Builder模式创建对象/" itemprop="url">
+                  未命名
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-24T10:17:08+08:00" content="2016-05-24">
+              2016-05-24
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>—ls<br>title: Java如何使用Builder模式创建对象<br>date: 2016-05-24 10:03:18<br>tags: Java</p>
+<h2 id="categories-programming"><a href="#categories-programming" class="headerlink" title="categories: programming"></a>categories: programming</h2><p>我们知道在某些类中会包含很多的变量，而这些变量需要在构造函数中传入，但是有些参数在某种情况下又不需要传入，<br>那么在写构造函数的时候就需要写很多个构造函数，这样没有达到按需给取的目的，而且代码也不简洁。<br>在这里我们可以参考一下Retorfit中RestAdapter 类的写法，该类是采用Builder模式来创建的。<br>首先看一下源码的定义方式</p>
+<p>public class RestAdapter {<br>  private RestAdapter(){}</p>
+<p>public static class Builder {</p>
+<pre><code>public Builder setEndpoint(String endpoint) {
+</code></pre><p>  return this;<br>}</p>
+<p>public Builder setProfiler(Profiler profiler) {<br>  return this;<br>}</p>
+<p>public RestAdapter build() {<br>  return new RestAdapter();<br>}<br>   }</p>
+<p>}</p>
+<p>最后是这么使用的：<br>RestAdapter.Builder builder = new RestAdapter.Builder();<br>builder.setEndpoint(baseUrl)；<br>RestAdapter restAdapter = builder.build();</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/05/23/MVP模式和MVC模式/" itemprop="url">
                   MVP模式和MVC模式
                 </a>
@@ -506,7 +609,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
